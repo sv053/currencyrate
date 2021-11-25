@@ -73,7 +73,9 @@ public class CurrencyController {
         };
         GeneralGif generalGif;
         generalGif = giphyApi.getGifs(gif_app_id, queryWord, 25, 0, "g", "en");
-        String urlString = generalGif.getData()[new Random().nextInt(24)].getEmbed_url();
+        String urlString = generalGif
+                .getData()[new Random().nextInt(24)]
+                .getEmbed_url();
         model.addAttribute("pic", urlString);
         return "img";
     }
@@ -92,3 +94,4 @@ public class CurrencyController {
         return (todayCros.compareTo(yestCros) >= 0);
     }
 }
+
